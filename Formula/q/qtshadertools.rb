@@ -1,10 +1,10 @@
 class Qtshadertools < Formula
   desc "Provides tools for the cross-platform Qt shader pipeline"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtshadertools-everywhere-src-6.10.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtshadertools-everywhere-src-6.10.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtshadertools-everywhere-src-6.10.1.tar.xz"
-  sha256 "b67894a63352b53dad0d46f5300c62b8cd6783db575492d6b25d4fdc9af55bb6"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtshadertools-everywhere-src-6.10.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtshadertools-everywhere-src-6.10.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtshadertools-everywhere-src-6.10.2.tar.xz"
+  sha256 "18d9dbbc4f7e6e96e6ed89a9965dc032e2b58158b65156c035537826216716c9"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qsb
