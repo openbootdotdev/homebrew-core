@@ -1,10 +1,10 @@
 class Qtlanguageserver < Formula
   desc "Implementation of the Language Server Protocol and JSON-RPC"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtlanguageserver-everywhere-src-6.10.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtlanguageserver-everywhere-src-6.10.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtlanguageserver-everywhere-src-6.10.1.tar.xz"
-  sha256 "3360526b4f4d556673b31e29a49e15d02da52d5eaa53b0204d56a0ba160a556c"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtlanguageserver-everywhere-src-6.10.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtlanguageserver-everywhere-src-6.10.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtlanguageserver-everywhere-src-6.10.2.tar.xz"
+  sha256 "9a043f2c84b0b470065fc7a954dc4ff0388db3e1b2c457c3d69670baecc40d53"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
