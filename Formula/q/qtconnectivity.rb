@@ -1,10 +1,10 @@
 class Qtconnectivity < Formula
   desc "Provides access to Bluetooth hardware"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtconnectivity-everywhere-src-6.10.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtconnectivity-everywhere-src-6.10.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtconnectivity-everywhere-src-6.10.1.tar.xz"
-  sha256 "7baefd3a90c73820e33ddc59ded8c018e233d14d23eaa4eadbf332b5ac2154ff"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtconnectivity-everywhere-src-6.10.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtconnectivity-everywhere-src-6.10.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtconnectivity-everywhere-src-6.10.2.tar.xz"
+  sha256 "cf58f021f32857b5b6799cd4404ef613399ecc1c515492f0f620ce338a311a32"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
