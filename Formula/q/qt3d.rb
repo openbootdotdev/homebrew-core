@@ -1,10 +1,10 @@
 class Qt3d < Formula
   desc "Provides functionality for near-realtime simulation systems"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qt3d-everywhere-src-6.10.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qt3d-everywhere-src-6.10.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qt3d-everywhere-src-6.10.1.tar.xz"
-  sha256 "60593fd54f7b1e48dc67ddce0f1113e4593878872539677104c92926ef039c9a"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qt3d-everywhere-src-6.10.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qt3d-everywhere-src-6.10.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qt3d-everywhere-src-6.10.2.tar.xz"
+  sha256 "febbca9d491feca0fa2d770e912590b4ef18e461f739ca6e855ea62a488bbb6d"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     "BSD-3-Clause", # *.cmake
