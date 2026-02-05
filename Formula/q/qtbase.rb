@@ -1,6 +1,10 @@
 class Qtbase < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtbase-everywhere-src-6.10.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtbase-everywhere-src-6.10.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtbase-everywhere-src-6.10.2.tar.xz"
+  sha256 "aeb78d29291a2b5fd53cb55950f8f5065b4978c25fb1d77f627d695ab9adf21e"
   license all_of: [
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } }, # qmake
@@ -8,25 +12,6 @@ class Qtbase < Formula
     "GFDL-1.3-no-invariants-only", # *.qdoc
   ]
   head "https://code.qt.io/qt/qtbase.git", branch: "dev"
-
-  stable do
-    url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtbase-everywhere-src-6.10.1.tar.xz"
-    mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtbase-everywhere-src-6.10.1.tar.xz"
-    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtbase-everywhere-src-6.10.1.tar.xz"
-    sha256 "5a6226f7e23db51fdc3223121eba53f3f5447cf0cc4d6cb82a3a2df7a65d265d"
-
-    # Backport fix to add framework directory to Cflags on macOS
-    patch do
-      url "https://github.com/qt/qtbase/commit/dc9f359f3ce880b04c1c7b95d06bffc7b991ff09.patch?full_index=1"
-      sha256 "9fbd8b63bfae37cf1380dda0263623843c25b72d74baf9bd9c0ae9a28b31d392"
-    end
-
-    # Backport fix for macdeployqt to find rpath-referenced paths
-    patch do
-      url "https://github.com/qt/qtbase/commit/3bae28598774f1bf1776c0cd82f413e5b3282b7c.patch?full_index=1"
-      sha256 "2f091c0c2f28bbf0f384797cd27eb13029b097750e7b578e7ef745b0a473c6f6"
-    end
-  end
 
   # The first-party website doesn't make version information readily available,
   # so we check the `head` repository tags instead.
