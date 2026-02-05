@@ -1,10 +1,10 @@
 class Qtnetworkauth < Formula
   desc "Provides support for OAuth-based authorization to online services"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.10/6.10.1/submodules/qtnetworkauth-everywhere-src-6.10.1.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.1/submodules/qtnetworkauth-everywhere-src-6.10.1.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.1/submodules/qtnetworkauth-everywhere-src-6.10.1.tar.xz"
-  sha256 "1435eb598172d888d7d1795a297c7623f7d8f3afe010c8f40c5aa100abcf380d"
+  url "https://download.qt.io/official_releases/qt/6.10/6.10.2/submodules/qtnetworkauth-everywhere-src-6.10.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.10/6.10.2/submodules/qtnetworkauth-everywhere-src-6.10.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.10/6.10.2/submodules/qtnetworkauth-everywhere-src-6.10.2.tar.xz"
+  sha256 "4f29fd9e4b505f5714fc42296b04c701f66ced185c49de4d520cb8de4b1981b3"
   license all_of: [
     "GPL-3.0-only",
     "BSD-3-Clause", # *.cmake
