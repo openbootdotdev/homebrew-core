@@ -30,40 +30,43 @@ class Freeciv < Formula
 
   depends_on "pkgconf" => :build
   depends_on "adwaita-icon-theme"
-  depends_on "at-spi2-core"
   depends_on "cairo"
-  depends_on "freetype"
   depends_on "gdk-pixbuf"
-  depends_on "gettext"
   depends_on "glib"
-  depends_on "gtk+3"
+  depends_on "graphene"
+  depends_on "gtk4"
   depends_on "harfbuzz"
   depends_on "icu4c@78"
+  depends_on "lua"
   depends_on "pango"
   depends_on "readline"
   depends_on "sdl2"
   depends_on "sdl2_mixer"
-  depends_on "sqlite" # try to change to uses_from_macos after python is not a dependency
   depends_on "zstd"
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+  uses_from_macos "sqlite"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV["ac_cv_lib_lzma_lzma_code"] = "no"
 
-    args = %W[
-      --disable-gtktest
+    args = %w[
       --disable-sdl2framework
       --disable-sdl2test
-      --disable-sdltest
       --disable-silent-rules
-      --enable-client=gtk3.22
+      --enable-client=gtk4
       --enable-fcdb=sqlite3
-      --with-readline=#{Formula["readline"].opt_prefix}
-      CFLAGS=-I#{Formula["gettext"].include}
-      LDFLAGS=-L#{Formula["gettext"].lib}
+      --enable-sys-lua
+      --with-readline
     ]
 
     if build.head?
