@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.15.5",
-      revision: "8a4b77f9daccc2509596753c0cb5564918b4ada0"
+      tag:      "v0.15.6",
+      revision: "099a0f18ef29a95d8d6c4fe1343e48e0d9f4cdd7"
   license "MIT"
   head "https://github.com/ollama/ollama.git", branch: "main"
 
@@ -30,6 +30,15 @@ class Ollama < Formula
   on_macos do
     on_arm do
       depends_on "mlx-c" => :no_linkage
+
+      # Fixes mlx wrapper generation with system-installed mlx-c headers.
+      # upstream pr ref, https://github.com/ollama/ollama/pull/14201
+      if build.stable?
+        patch do
+          url "https://github.com/ollama/ollama/commit/c051122297824c223454b82f4af3afe94379e6dd.patch?full_index=1"
+          sha256 "a22665cd1acec84f6bb53c84dd9a40f7001f2b1cbe2253aed3967b4401cde6a0"
+        end
+      end
     end
   end
 
@@ -59,7 +68,7 @@ class Ollama < Formula
       mlx_args << "-tags=mlx"
     end
 
-    system "go", "generate", "./..."
+    system "go", "generate", *mlx_args, "./..."
     system "go", "build", *mlx_args, *std_go_args(ldflags:)
   end
 
