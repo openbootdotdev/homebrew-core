@@ -6,6 +6,7 @@ class Glib < Formula
   url "https://download.gnome.org/sources/glib/2.86/glib-2.86.3.tar.xz"
   sha256 "b3211d8d34b9df5dca05787ef0ad5d7ca75dec998b970e1aab0001d229977c65"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_tahoe:   "ee825ad9ee5e273c0d6e2fe8b95f7fdab185141ab3f2255719ffb748b23ca46e"
@@ -28,7 +29,6 @@ class Glib < Formula
   uses_from_macos "flex" => :build # for gobject-introspection
   uses_from_macos "libffi"
   uses_from_macos "python"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "gettext"
@@ -37,6 +37,7 @@ class Glib < Formula
   on_linux do
     depends_on "dbus"
     depends_on "util-linux"
+    depends_on "zlib-ng-compat"
   end
 
   # These used to live in the now defunct `glib-utils`.
@@ -70,6 +71,9 @@ class Glib < Formula
     # build patch for `ld: missing LC_LOAD_DYLIB (must link with at least libSystem.dylib) \
     # in ../gobject-introspection-1.80.1/build/tests/offsets/liboffsets-1.0.1.dylib`
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if OS.mac? && MacOS.version == :ventura
+
+    # Work around Meson's automatic removal of RPATHs by explicitly passing in LDFLAGS
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["zlib-ng-compat"].opt_lib}" if OS.linux?
 
     # Disable dtrace; see https://trac.macports.org/ticket/30413
     # and https://gitlab.gnome.org/GNOME/glib/-/issues/653
