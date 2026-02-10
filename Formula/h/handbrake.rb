@@ -4,7 +4,7 @@ class Handbrake < Formula
   url "https://github.com/HandBrake/HandBrake/releases/download/1.10.2/HandBrake-1.10.2-source.tar.bz2"
   sha256 "c65e1cc4f8cfc36c24107b92c28d60e71ef185ec983e9a5841facffafea5f8db"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/HandBrake/HandBrake.git", branch: "master"
 
   bottle do
@@ -52,7 +52,6 @@ class Handbrake < Formula
   uses_from_macos "python" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libx11"
@@ -60,6 +59,7 @@ class Handbrake < Formula
 
   on_linux do
     depends_on "numactl"
+    depends_on "zlib-ng-compat"
   end
 
   def install
