@@ -6,7 +6,7 @@ class FfmpegAT4 < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
 
   livecheck do
     url "https://ffmpeg.org/download.html"
@@ -63,7 +63,6 @@ class FfmpegAT4 < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libarchive"
@@ -77,6 +76,7 @@ class FfmpegAT4 < Formula
     depends_on "libx11"
     depends_on "libxext"
     depends_on "libxv"
+    depends_on "zlib-ng-compat"
   end
 
   def install
