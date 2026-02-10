@@ -19,10 +19,10 @@ class Libunwind < Formula
 
   depends_on :linux
   depends_on "xz"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end
