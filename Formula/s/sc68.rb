@@ -37,10 +37,9 @@ class Sc68 < Formula
     depends_on "pkgconf" => :build
   end
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "readline"
+    depends_on "zlib-ng-compat"
   end
 
   def install
