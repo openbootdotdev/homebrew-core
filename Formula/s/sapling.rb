@@ -43,7 +43,10 @@ class Sapling < Formula
   # this is a workaround to allow to build against system curl
   # see discussions in https://github.com/Homebrew/homebrew-core/pull/197727
   uses_from_macos "curl", since: :sonoma
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "sl", because: "both install `sl` binaries"
 
