@@ -41,7 +41,10 @@ class Simutrans < Formula
   uses_from_macos "unzip" => :build
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "pak64" do
     url "https://downloads.sourceforge.net/project/simutrans/pak64/124-3/simupak64-124-3.zip"
