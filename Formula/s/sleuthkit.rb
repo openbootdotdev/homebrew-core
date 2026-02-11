@@ -31,7 +31,9 @@ class Sleuthkit < Formula
   depends_on "openssl@3"
   depends_on "sqlite"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   conflicts_with "ffind", because: "both install a `ffind` executable"
 
