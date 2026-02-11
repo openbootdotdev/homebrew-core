@@ -1,13 +1,12 @@
 class Cling < Formula
   desc "C++ interpreter"
   homepage "https://root.cern/cling/"
-  url "https://github.com/root-project/cling/archive/refs/tags/v1.2.tar.gz"
-  sha256 "beee8e461424d267ee2dec88b3de57326bc8e3470b4ceae2744de7d3d3aba1eb"
+  url "https://github.com/root-project/cling/archive/refs/tags/v1.3.tar.gz"
+  sha256 "ca81f3bc952338beffba178633d77f5b3e1f1f180cbe2bb9f2713c06f410fd18"
   license all_of: [
     { any_of: ["LGPL-2.1-only", "NCSA"] },
     { "Apache-2.0" => { with: "LLVM-exception" } }, # llvm
   ]
-  revision 1
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -39,8 +38,8 @@ class Cling < Formula
   # `git ls-remote --heads https://github.com/root-project/llvm-project.git cling-latest`
   # grab the latest tag https://github.com/root-project/llvm-project/commit/<commit>
   resource "llvm" do
-    url "https://github.com/root-project/llvm-project/archive/refs/tags/cling-llvm18-20240821-01.tar.gz"
-    sha256 "47676c77bfa7c63cd6101bcea2611ac0cf363cb5ceb87955ea9e2b3e832ea887"
+    url "https://github.com/root-project/llvm-project/archive/refs/tags/cling-llvm20-20260119-01.tar.gz"
+    sha256 "6d023a311393eee6025bf3b1e6bb9caa9b31ec2f288f9bee1a2fbe71072b2849"
   end
 
   def install
