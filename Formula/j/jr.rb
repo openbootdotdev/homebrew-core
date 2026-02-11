@@ -25,6 +25,8 @@ class Jr < Formula
     pkgetc.install "config/jrconfig.json"
     pkgetc.install "templates"
     (bin/"jr").write_env_script libexec/"jr", JR_SYSTEM_DIR: pkgetc
+
+    generate_completions_from_executable(libexec/"jr", shell_parameter_format: :cobra)
   end
 
   test do
