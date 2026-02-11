@@ -38,14 +38,13 @@ class Scummvm < Formula
   depends_on "sdl2"
   depends_on "theora"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "musepack"
   end
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "zlib-ng-compat"
   end
 
   def install
