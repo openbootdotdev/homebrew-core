@@ -21,7 +21,9 @@ class Seal < Formula
   depends_on "cpp-gsl"
   depends_on "zstd"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "hexl" do
     url "https://github.com/IntelLabs/hexl/archive/refs/tags/v1.2.5.tar.gz"
