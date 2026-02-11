@@ -1,8 +1,8 @@
 class Nikto < Formula
   desc "Web server scanner"
   homepage "https://cirt.net/nikto/"
-  url "https://github.com/sullo/nikto/archive/refs/tags/2.5.0.tar.gz"
-  sha256 "fb0dc4b2bc92cb31f8069f64ea4d47295bcd11067a7184da955743de7d97709d"
+  url "https://github.com/sullo/nikto/archive/refs/tags/2.6.0.tar.gz"
+  sha256 "656554f9aeba8c462689582b59d141369dbcadac11141cd02752887f363430ec"
   license "GPL-2.0-only"
 
   livecheck do
@@ -27,16 +27,16 @@ class Nikto < Formula
                 "DBDIR=#{var}/nikto/databases"
         s.gsub! "# TEMPLATEDIR=/opt/nikto/templates",
                 "TEMPLATEDIR=#{pkgshare}/templates"
-        s.gsub! "# DOCDIR=/opt/nikto/docs", "DOCDIR=#{pkgshare}/docs"
+        s.gsub! "# DOCDIR=/opt/nikto/docs", "DOCDIR=#{doc}"
       end
 
       bin.install "nikto.pl" => "nikto"
-      bin.install "replay.pl"
+      bin.install "utils/replay.pl" => "replay.pl"
       etc.install "nikto.conf.default" => "nikto.conf"
-      man1.install "docs/nikto.1"
-      pkgshare.install "docs", "plugins", "templates"
+      pkgshare.install "plugins", "templates"
     end
 
+    man1.install "documentation/nikto.1"
     doc.install Dir["documentation/*"]
     (var/"nikto/databases").mkpath
     cp_r Dir["program/databases/*"], var/"nikto/databases"
