@@ -16,7 +16,10 @@ class SentryNative < Formula
 
   depends_on "cmake" => :build
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # No recent tagged releases, use the latest commit
   resource "breakpad" do
