@@ -38,10 +38,9 @@ class Snort < Formula
   depends_on "vectorscan"
   depends_on "xz" # for lzma.h
 
-  uses_from_macos "zlib"
-
   on_linux do
     depends_on "libunwind"
+    depends_on "zlib-ng-compat"
   end
 
   def install
