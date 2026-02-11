@@ -26,7 +26,10 @@ class Sambamba < Formula
   depends_on "lz4"
 
   uses_from_macos "python" => :build
-  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   # remove `-flto=full` flag
   patch :DATA
