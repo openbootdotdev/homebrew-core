@@ -30,7 +30,6 @@ class Sdcc < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "zstd"
@@ -38,6 +37,10 @@ class Sdcc < Formula
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
