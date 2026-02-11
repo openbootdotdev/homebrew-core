@@ -30,7 +30,9 @@ class ScummvmTools < Formula
   depends_on "mad"
   depends_on "wxwidgets"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # configure will happily carry on even if it can't find wxwidgets,
