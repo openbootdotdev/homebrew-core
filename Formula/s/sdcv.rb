@@ -31,10 +31,12 @@ class Sdcv < Formula
   depends_on "glib"
   depends_on "readline"
 
-  uses_from_macos "zlib"
-
   on_macos do
     depends_on "gettext"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   # fix type mismatch and memory deallocation build errors
