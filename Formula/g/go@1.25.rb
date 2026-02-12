@@ -6,6 +6,15 @@ class GoAT125 < Formula
   sha256 "178f2832820274b43e177d32f06a3ebb0129e427dd20a5e4c88df2c1763cf10a"
   license "BSD-3-Clause"
   revision 1
+
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1b7dbdf302ac420aa8f9f21b80753b42670160344ae8fcd222ed79f5dc4daa55"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b7dbdf302ac420aa8f9f21b80753b42670160344ae8fcd222ed79f5dc4daa55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b7dbdf302ac420aa8f9f21b80753b42670160344ae8fcd222ed79f5dc4daa55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22393319dcfebad92b53a89259e924f66c7fec7bf56d73f8dd5be88c0e75cb4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df5032811d797828f11621cdf085d5ab39fafa1127299c95d321773920257de8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88ee33ff7f5018e16c12a93d4bad41ecfb5ed6b7112cd7a0206b6d69684552e0"
+  end
   compatibility_version 1
 
   livecheck do
